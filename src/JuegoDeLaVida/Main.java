@@ -7,8 +7,8 @@ import java.util.Scanner;
  * Esta clase Java consiste en el llamado Juego de La vida, donde el usuario introduce el nï¿½mero
  * de filas y columnas del tablero, y el número de generaciones que se van a simular. Cada casilla
  * del tabelro se rellena con un 20% de probabilidad de cï¿½lula viva(*), y si no con un espacio en
- * blanco, por cada generaciï¿½n, si una cï¿½lula esta rodeada por dos o tres (en sus ocho casillas
- * vecinas), no pasa nada, si son mas de tres, muere por sobrepoblaciï¿½n, y si hay menos de dos,
+ * blanco, por cada generación, si una célula esta rodeada por dos o tres (en sus ocho casillas
+ * vecinas), no pasa nada, si son mas de tres, muere por sobrepoblación, y si hay menos de dos,
  * muere por estar sola. Si hay exactamente tres celulas vecinas de un espacio en blanco, se genera
  * una cï¿½lula nueva por reproducciï¿½n. Este proceso se repite cadda vez por generaciï¿½n.
  * @author alexc
