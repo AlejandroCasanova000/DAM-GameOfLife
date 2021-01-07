@@ -261,7 +261,7 @@ public class Main {
 	public static String esperarUsuario(Scanner entrada) {
 		String respuesta = "";
 		while (!respuesta.equals("N") && !respuesta.equals("F")) {
-			System.out.println("Introduce N para la siguiente generaciï¿½n o F para ir hasta el "
+			System.out.println("Introduce N para la siguiente generación o F para ir hasta el "
 					+ "final");
 			respuesta = entrada.next();
 		}
