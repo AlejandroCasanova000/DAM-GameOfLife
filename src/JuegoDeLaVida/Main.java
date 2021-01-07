@@ -31,6 +31,7 @@ public class Main {
 		Scanner entrada = new Scanner(System.in);
 		ArrayList<Tripleta> iteraciones = new ArrayList<Tripleta>();
 		int celulas = 0;
+		int celulasG0 = 0;
 		int n = -3;
 		while (n < 0) {
 			System.out.print("Introduce el número de filas");
@@ -53,13 +54,14 @@ public class Main {
 		mostrarTablero(tablero);
 		respuesta = esperarUsuario(entrada);
 		Tripleta tripleta;
+		celulasG0 = contarCelulas(tablero);
 		for (int i = 0; i < generaciones; i++) {
 			System.out.println("Generacion " + (i + 1));
 			tablero = matarPorPoblacion(tablero);
 			mostrarTablero(tablero);
 			celulas = contarCelulas(tablero);
 			if (i == 0) {
-				tripleta = new Tripleta(i , celulas , celulas);
+				tripleta = new Tripleta(i , celulas , celulas - celulasG0);
 			} else {
 				tripleta = new Tripleta(i , celulas , (celulas - 
 						iteraciones.get(i - 1).getCelulasVivas()));
