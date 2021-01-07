@@ -83,7 +83,7 @@ public class Pruebas1{
 	}
 	
 	/**
-	 * Pre: Este mÃ©todo Ãºnicamente pinta una lÃ­nea "+----+" en proporcion al tablero
+	 * Pre: Este método únicamente pinta una línea "+----+" en proporcion al tablero
 	 * @param longitud
 	 */
 	public static void lineaTablero (int longitud) {
@@ -98,9 +98,9 @@ public class Pruebas1{
 	}
 	
 	/**
-	 * Pre: Rellena el tablero de cï¿½lulas vivas y muertas
+	 * Pre: Rellena el tablero de células vivas y muertas
 	 * Post: Para ello se recorre asignando a cada casilla un espacio en blanco, luego ponemos las
-	 * cï¿½lulas en el patron correcto para ver si la pruba estï¿½ bien hecha.
+	 * células en el patron correcto para ver si la pruba está bien hecha.
 	 * @param tablero
 	 * @return
 	 */
@@ -118,10 +118,10 @@ public class Pruebas1{
 	}
 	
 	/**
-	 * Pre: Comprueba las cï¿½lulas vivas que hay en las ocho casillas vecinas de la casilla
+	 * Pre: Comprueba las células vivas que hay en las ocho casillas vecinas de la casilla
 	 * [tablero[fila][col]]
-	 * Post: Para ello se recorre el tablero entero, y cuando se estï¿½ en una casilla vecina, se
-	 * comprueba si hay un asterisco, y se aï¿½ade 1 al contador
+	 * Post: Para ello se recorre el tablero entero, y cuando se está en una casilla vecina, se
+	 * comprueba si hay un asterisco, y se añade 1 al contador
 	 * @param tab El tabelro
 	 * @param fila La fila de la casilla
 	 * @param col La columna de la casilla
@@ -165,13 +165,13 @@ public class Pruebas1{
 	}
 	
 	/**
-	 * Pre: Este mï¿½todo se encarga de matar o crear cï¿½lulas segï¿½n las reglas explicadas mas arriba
-	 * Post: Para ello se recorre el tablero entero, si es una asterisco, se comprubeba el nï¿½mero
-	 * de cï¿½lulas vivas vecinas (comprobarVecinas()), y la cï¿½lula muere o no segï¿½n las reglas. Si
-	 * por el contrario es un espacio vacï¿½o, se comprueban tambiï¿½n las cï¿½lulas vecinas, si hay
+	 * Pre: Este método se encarga de matar o crear células según las reglas explicadas mas arriba
+	 * Post: Para ello se recorre el tablero entero, si es una asterisco, se comprubeba el número
+	 * de células vivas vecinas (comprobarVecinas()), y la célula muere o no según las reglas. Si
+	 * por el contrario es un espacio vacío, se comprueban también las células vecinas, si hay
 	 * exactamente 3, se genera una nueva en ese espacio.
-	 * Tanto si muere una cï¿½lula como si se crea, se aï¿½ade al tableroNuevo, ya que si se trabaja
-	 * sobre el tablero normal, la reproducciï¿½n y la superpoblaciï¿½n no estarï¿½a bien programada.
+	 * Tanto si muere una célula como si se crea, se añade al tableroNuevo, ya que si se trabaja
+	 * sobre el tablero normal, la reproducción y la superpoblación no estaría bien programada.
 	 * @param tablero El tablero
 	 * @return
 	 */
@@ -204,8 +204,8 @@ public class Pruebas1{
 	}
 	
 	/**
-	 * Pre: Este mï¿½todo cuenta el nï¿½mero de cï¿½lulas vivas que hay en el tablero
-	 * Post: Se recorre el tablero aï¿½adiendo 1 al contador cada vez que haya un asterisco.
+	 * Pre: Este método cuenta el número de células vivas que hay en el tablero
+	 * Post: Se recorre el tablero añadiendo 1 al contador cada vez que haya un asterisco.
 	 * @param tablero
 	 * @return
 	 */
