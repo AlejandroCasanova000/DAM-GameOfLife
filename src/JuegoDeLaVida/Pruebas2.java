@@ -3,10 +3,10 @@ package JuegoDeLaVida;
 import java.util.ArrayList;
 /**
  * Esta clase Java consiste en el llamado Juego de La vida, donde el tablero es de 
- * 4*4, y el nï¿½mero de generaciones que se van a simular son 30. Se rellena el tablero y se aplican
- * las reglas, si una cï¿½lula tiene en sus 8 casillas vecinas mï¿½s de tres cï¿½lulas, esta muere por
- * sobrepoblaciï¿½n, y si hay menos de dos, muere por estar sola. Si hay exactemante tres cï¿½lulas
- * vivas alrededor de un espacio en blanco, se genera una nueva por reproducciï¿½n. Este proceso
+ * 4*4, y el número de generaciones que se van a simular son 30. Se rellena el tablero y se aplican
+ * las reglas, si una célula tiene en sus 8 casillas vecinas más de tres células, esta muere por
+ * sobrepoblación, y si hay menos de dos, muere por estar sola. Si hay exactemante tres células
+ * vivas alrededor de un espacio en blanco, se genera una nueva por reproducción. Este proceso
  * se repite 30 veces.
  * @author alexc
  *
