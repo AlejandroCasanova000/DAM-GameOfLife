@@ -80,6 +80,6 @@ public class Tripleta {
 	 */
 	public void mostrarCelula() {
 		String leftAlignFormat = "| %-11s | %-13d | %-18d |%n";
-		System.out.format(leftAlignFormat, numIteracion , celulasVivas , diferenciaCelulas);
+		System.out.format(leftAlignFormat, numIteracion + 1 , celulasVivas , diferenciaCelulas);
 	}
 }

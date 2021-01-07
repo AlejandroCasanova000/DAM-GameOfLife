@@ -25,19 +25,21 @@ public class Pruebas2{
 	public static void main(String[] args) {
 		ArrayList<Tripleta> iteraciones = new ArrayList<Tripleta>();
 		int celulas = 0;
+		int celulasG0 = 0;
 		Tripleta tripleta;
 		int generaciones = 30;
 		String[][] tablero = new String[5][5];
 		tablero = generarTablero(tablero);
 		System.out.println("Generación 0");
 		mostrarTablero(tablero);
+		celulasG0 = contarCelulas(tablero);
 		for (int i = 0; i < generaciones; i++) {
 			System.out.println("Generación " + (i + 1));
 			tablero = matarPorPoblacion(tablero);
 			mostrarTablero(tablero);
 			celulas = contarCelulas(tablero);
 			if (i == 0) {
-				tripleta = new Tripleta(i , celulas , celulas);
+				tripleta = new Tripleta(i , celulas , celulas - celulasG0);
 			} else {
 				tripleta = new Tripleta(i , celulas , (celulas - 
 						iteraciones.get(i - 1).getCelulasVivas()));
