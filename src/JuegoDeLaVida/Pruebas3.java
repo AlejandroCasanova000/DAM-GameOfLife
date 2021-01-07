@@ -15,12 +15,12 @@ import java.util.ArrayList;
 public class Pruebas3{
 	
 	/**
-	 * Pre: Este mmï¿½todo se encarga de repetir el proceso de generaciones 30 veces.
+	 * Pre: Este método se encarga de repetir el proceso de generaciones 30 veces.
 	 * Post: Manda rellenar el tablero y posteriormente empieza
 	 * a simular las generaciones, mostrando por pantalla el numoer de la generacion y como queda
 	 * el tablero tras esta. Las iteraciones se guardan en la losta iteraciones, del tipo Tripleta,
-	 * que guarda el nï¿½mero de generacion, el nï¿½mero de cï¿½lulas vivas y la diferencia de estas con
-	 * las de la iteraciï¿½n anterior. Luego muestra una tabla de esta lista.
+	 * que guarda el número de generacion, el número de células vivas y la diferencia de estas con
+	 * las de la iteración anterior. Luego muestra una tabla de esta lista.
 	 * @param args
 	 */
 	public static void main(String[] args) {
