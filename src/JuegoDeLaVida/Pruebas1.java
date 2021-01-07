@@ -30,10 +30,10 @@ public class Pruebas1{
 		int generaciones = 30;
 		String[][] tablero = new String[4][4];
 		tablero = generarTablero(tablero);
-		System.out.println("Generaciï¿½n 0");
+		System.out.println("Generación 0");
 		mostrarTablero(tablero);
 		for (int i = 0; i < generaciones; i++) {
-			System.out.println("Generaciï¿½n " + (i + 1));
+			System.out.println("Generación " + (i + 1));
 			tablero = matarPorPoblacion(tablero);
 			mostrarTablero(tablero);
 			celulas = contarCelulas(tablero);
@@ -50,7 +50,7 @@ public class Pruebas1{
 			}
 		}
 		System.out.format("+-------------+---------------+--------------------+%n");
-		System.out.format("| Generaciï¿½n  | Cï¿½lulas Vivas | Diferencia Cï¿½lulas |%n");
+		System.out.format("| Generación  | Células Vivas | Diferencia Células |%n");
 		System.out.format("+-------------+---------------+--------------------+%n");
 		for(Tripleta tripletaActual : iteraciones) {
 			tripletaActual.mostrarCelula();
