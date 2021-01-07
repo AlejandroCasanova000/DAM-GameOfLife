@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * Esta clase Java consiste en el llamado Juego de La vida, donde el usuario introduce el nï¿½mero
+ * Esta clase Java consiste en el llamado Juego de La vida, donde el usuario introduce el número
  * de filas y columnas del tablero, y el número de generaciones que se van a simular. Cada casilla
- * del tabelro se rellena con un 20% de probabilidad de cï¿½lula viva(*), y si no con un espacio en
+ * del tabelro se rellena con un 20% de probabilidad de célula viva(*), y si no con un espacio en
  * blanco, por cada generación, si una célula esta rodeada por dos o tres (en sus ocho casillas
  * vecinas), no pasa nada, si son mas de tres, muere por sobrepoblación, y si hay menos de dos,
  * muere por estar sola. Si hay exactamente tres celulas vecinas de un espacio en blanco, se genera
- * una cï¿½lula nueva por reproducciï¿½n. Este proceso se repite cadda vez por generaciï¿½n.
+ * una célula nueva por reproducción. Este proceso se repite cadda vez por generación.
  * @author alexc
  *
  */
@@ -18,13 +18,13 @@ import java.util.Scanner;
 public class Main {
 	
 	/**
-	 * Pre: Este mmï¿½todo se encarga de pedir al usuario las filas y las columnas y las 
+	 * Pre: Este método se encarga de pedir al usuario las filas y las columnas y las 
 	 * generaciones.
 	 * Post: Despues de pedir los datos, manda rellenar el tablero y posteriormente empieza
-	 * a simular las generaciones, mostrando por pantalla el numoer de la generacion y como queda
+	 * a simular las generaciones, mostrando por pantalla el numero de la generacion y como queda
 	 * el tablero tras esta. Las iteraciones se guardan en la losta iteraciones, del tipo Tripleta,
-	 * que guarda el número de generacion, el número de cï¿½lulas vivas y la diferencia de estas con
-	 * las de la iteraciï¿½n anterior. Luego muestra una tabla de esta lista.
+	 * que guarda el número de generacion, el número de células vivas y la diferencia de estas con
+	 * las de la iteración anterior. Luego muestra una tabla de esta lista.
 	 * @param args
 	 */
 	public static void main(String[] args) {
@@ -33,22 +33,22 @@ public class Main {
 		int celulas = 0;
 		int n = -3;
 		while (n < 0) {
-			System.out.print("Introduce el nï¿½mero de filas");
+			System.out.print("Introduce el número de filas");
 			n = entrada.nextInt();
 		}
 		int m = -3;
 		while (m < 0) {
-			System.out.print("Introduce el nï¿½mero de columnas");
+			System.out.print("Introduce el número de columnas");
 			m = entrada.nextInt();
 		}
 		int generaciones = -3;
 		while (generaciones < 0) {
-			System.out.print("Introduce el nï¿½mero de generaciones a simular");
+			System.out.print("Introduce el número de generaciones a simular");
 			generaciones = entrada.nextInt();
 		}
 		String[][] tablero = new String[n][m];
 		tablero = generarTablero(tablero);
-		System.out.println("Generaciï¿½n 0");
+		System.out.println("Generación 0");
 		String respuesta = "N";
 		mostrarTablero(tablero);
 		respuesta = esperarUsuario(entrada);
@@ -71,14 +71,14 @@ public class Main {
 			} 
 			if (i == generaciones - 1) {
 				System.out.println("Han sobrevivido " + iteraciones.get(i).getCelulasVivas() + 
-						" cï¿½lulas");
+						" células");
 			} else if (respuesta.equals("N")) {
 				respuesta = esperarUsuario(entrada);
 			}
 			
 		}
 		System.out.format("+-------------+---------------+--------------------+%n");
-		System.out.format("| Generaciï¿½n  | Cï¿½lulas Vivas | Diferencia Cï¿½lulas |%n");
+		System.out.format("| Generación  | Células Vivas | Diferencia Células |%n");
 		System.out.format("+-------------+---------------+--------------------+%n");
 		for(Tripleta tripletaActual : iteraciones) {
 			tripletaActual.mostrarCelula();
