@@ -33,12 +33,12 @@ public class Pruebas1{
 		tablero = generarTablero(tablero);
 		System.out.println("Generación 0");
 		mostrarTablero(tablero);
-		celulasG0 = contarCelulas(tablero);
+		celulasG0 = Main.contarCelulas(tablero);
 		for (int i = 0; i < generaciones; i++) {
 			System.out.println("Generación " + (i + 1));
-			tablero = matarPorPoblacion(tablero);
+			tablero = Main.matarPorPoblacion(tablero);
 			mostrarTablero(tablero);
-			celulas = contarCelulas(tablero);
+			celulas = Main.contarCelulas(tablero);
 			if (i == 0) {
 				tripleta = new Tripleta(i , celulas , celulas - celulasG0);
 			} else {
@@ -118,109 +118,6 @@ public class Pruebas1{
 		tablero[2][2] = "*";
 		return tablero;
 	}
-	
-	/**
-	 * Pre: Comprueba las células vivas que hay en las ocho casillas vecinas de la casilla
-	 * [tablero[fila][col]]
-	 * Post: Para ello se recorre el tablero entero, y cuando se está en una casilla vecina, se
-	 * comprueba si hay un asterisco, y se añade 1 al contador
-	 * @param tab El tabelro
-	 * @param fila La fila de la casilla
-	 * @param col La columna de la casilla
-	 * @return
-	 */
-	public static int comprobarVecinas (String[][] tab , int fila , int col) {
-		int contador = 0;
-		for (int i = 0; i < tab.length; i++) {
-			for (int j = 0; j < tab[i].length; j++) {
-				if (i == fila - 1 || i == fila || i == fila + 1) {
-					if (i == fila - 1 && j == col - 1 && tab[i][j].equals("*")) {
-						contador++;
-					}
-					if (i == fila - 1 && j == col && tab[i][j].equals("*")) {
-						contador++;
-					}
-					if (i == fila - 1 && j == col + 1 && tab[i][j].equals("*")) {
-						contador++;
-					}
-					if (i == fila && j == col + 1 && tab[i][j].equals("*")) {
-						contador++;
-					}
-					if (i == fila && j == col - 1 && tab[i][j].equals("*")) {
-						contador++;
-					}
-					if (i == fila + 1 && j == col + 1 && tab[i][j].equals("*")) {
-						contador++;
-					}
-					if (i == fila + 1 && j == col && tab[i][j].equals("*")) {
-						contador++;
-					}
-					if (i == fila + 1 && j == col - 1 && tab[i][j].equals("*")) {
-						contador++;
-					}
-				} else {
-					break;
-				}
-			}
-		}
-		return contador;
-	}
-	
-	/**
-	 * Pre: Este método se encarga de matar o crear células según las reglas explicadas mas arriba
-	 * Post: Para ello se recorre el tablero entero, si es una asterisco, se comprubeba el número
-	 * de células vivas vecinas (comprobarVecinas()), y la célula muere o no según las reglas. Si
-	 * por el contrario es un espacio vacío, se comprueban también las células vecinas, si hay
-	 * exactamente 3, se genera una nueva en ese espacio.
-	 * Tanto si muere una célula como si se crea, se añade al tableroNuevo, ya que si se trabaja
-	 * sobre el tablero normal, la reproducción y la superpoblación no estaría bien programada.
-	 * @param tablero El tablero
-	 * @return
-	 */
-	public static String[][] matarPorPoblacion(String[][] tablero) {
-		String[][] tableroNuevo = new String[tablero.length][tablero[0].length];
-		int vecinas = 0;
-		for (int i = 0; i < tablero.length; i++) {
-			for (int j = 0; j < tablero[i].length; j++) {
-				tableroNuevo[i][j] = tablero[i][j];
-			}
-		}
-		for (int i = 0; i < tablero.length; i++) {
-			for (int j = 0; j < tablero[i].length; j++) {
-				if (tablero[i][j].equals("*")) {
-					vecinas = comprobarVecinas(tablero , i , j);
-					if (vecinas < 2) {
-						tableroNuevo[i][j] = " ";
-					} else if (vecinas > 3) {
-						tableroNuevo[i][j] = " ";
-					}
-				} else {
-					vecinas = comprobarVecinas(tablero , i , j);
-					if (vecinas == 3) {
-						tableroNuevo[i][j] = "*";
-					}
-				}
-			}
-		}
-		return tableroNuevo;
-	}
-	
-	/**
-	 * Pre: Este método cuenta el número de células vivas que hay en el tablero
-	 * Post: Se recorre el tablero añadiendo 1 al contador cada vez que haya un asterisco.
-	 * @param tablero
-	 * @return
-	 */
-	public static int contarCelulas(String[][] tablero) {
-		int contador = 0;
-		for (int i = 0; i < tablero.length; i++) {
-			for (int j = 0; j < tablero[i].length; j++) {
-				if (tablero[i][j].equals("*")) {
-					contador++;
-				}
-			}
-		}
-		return contador;
-	}
+
 }
 
